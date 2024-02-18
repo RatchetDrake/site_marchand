@@ -1,0 +1,383 @@
+/* Réinitialisation de certains styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header et navigation */
+header {
+    background-color: #005A9C;
+    color: white;
+    padding: 10px 0;
+}
+/* Style pour la barre supplémentaire */
+.top-bar {
+    background-color: #193784;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.home-link, .login-link {
+    background-color: white;
+    color: #005A9C;
+    padding: 5px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.home-link:hover, .login-link:hover {
+    background-color: #ffcc00;
+    color: #005A9C;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    margin-left: 3%;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+/* Styles pour le mode nuit */
+.night-mode {
+    background-color: #000;
+    color: #fff;
+}
+/* Style pour le mode nuit */
+.mode-nuit {
+    background-color: #111; /* Fond sombre */
+    color: #fff; /* Texte blanc */
+}
+/* Styles pour les modales en mode nuit */
+.modal.mode-nuit {
+    background-color: black; /* Change le fond en noir */
+    color: white; /* Change la couleur du texte en blanc */
+}
+.mode-nuit .login-panel-content {
+    background-color: #333; /* Fond sombre pour la section de connexion et d'inscription */
+}
+
+
+/* Styles spécifiques pour le volet de connexion en mode nuit */
+.night-mode .login-panel-content {
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* Zone de connexion */
+header div {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+header div a {
+    color: white;
+    text-decoration: none;
+}
+.titre {
+    text-align: center; /* Centrage horizontal */
+    margin-top: 0; /* Assurez-vous qu'il n'y a pas de marge en haut */
+}
+
+#carousel {
+    position: relative;
+    width: 2177px; /* Largeur fixe du conteneur du carrousel */
+    height: 642px; /* Hauteur fixe du conteneur du carrousel */
+    margin: auto;
+    overflow: hidden; /* Empêche le contenu de déborder */
+}
+
+#slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%; /* Assure que le conteneur des slides soit de la même largeur que #carousel */
+}
+
+#slides img {
+    width: calc(auto / 6); /* Répartit la largeur totale entre les images */
+    height: 450px; /* Assure que la hauteur des images ne dépasse pas celle du carrousel */
+    object-fit: cover; /* Assure que l'image couvre l'espace alloué sans déformation */
+    flex-shrink: 0; /* Empêche les images de rétrécir */
+    display: block; /* Élimine l'espace supplémentaire autour des images */
+    margin-right: 1%;
+}
+
+.carousel-nav {
+    position: absolute;
+    bottom: 100px; /* Place les points en bas du carrousel */
+    right: 15%;
+    width: 100%;
+    text-align: center;
+}
+
+.carousel-nav span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-nav span.active {
+    background-color: #333;
+}
+
+/* Ajoutez ici des styles pour d'autres sections ou éléments si nécessaire */
+.toggle{
+    display: inline-block;
+    padding: 10px 20px; /* Ajustez selon vos préférences */
+    background-color: #193784;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px; /* Arrondi les coins */
+    height: auto;
+    transition: background-color 0.3s;
+
+    text-align: center; /* Centre le texte horizontalement */
+    margin-bottom: 2%;
+}
+.toggle:hover {
+    background-color: #ffcc00;
+}
+
+#signup {
+    background-color: gray;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#signup .form-group {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#signup .modal-label {
+    width: 150px;
+}
+
+#signup .modal-input {
+    flex: 1;
+}
+/* Style du volet de connexion */
+#login{
+    background-color: gray;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+
+}
+#login-form {
+    width: 40%;
+    border-radius: 10px;
+}
+#login .form-group {
+    margin-bottom: 10px;
+    display: flex; /* Utilisation de flexbox pour aligner les éléments sur la même ligne */
+    align-items: center; /* Centre les éléments verticalement */
+}
+
+#login label {
+    width: 150px;
+}
+
+#login input[type="text"],
+#login input[type="password"] {
+    flex: 15em; /* L'input prendra autant d'espace que possible */
+}
+
+
+
+.login-panel {
+    position: fixed;
+    top: 0; /* Ajustez cette valeur si le volet ne commence pas en haut de la page */
+    right: -250px; /* Largeur hors écran pour cacher le volet */
+    width: 250px;
+    /* Hauteur auto pour s'adapter au contenu */
+    background: #193784;
+    color: white;
+    transition: right 0.3s;
+    z-index: 1000;
+    overflow: hidden; /* Assurez-vous que rien ne dépasse du volet */
+}
+
+.login-panel-content {
+    padding: 20px;
+}
+
+
+.user-name {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: white;
+    color: #193784;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+/* Style pour les liens à l'intérieur du volet, similaire au style de .login-link */
+.login-panel-link {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: white;
+    color: #193784;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.login-panel-link:hover {
+    background-color: #ffcc00;
+    color: #193784;
+}
+
+/* Style de la superposition */
+#overlay {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    background-color: white;
+    padding: 0px;
+    border-radius: 10px;
+    width: 40%; /* ou la largeur que vous souhaitez */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    margin: 15px;
+    
+}
+.modal-line {
+    background-color: #005A9C;
+    border-start-end-radius:  10px;
+    border-start-start-radius: 10px;
+    padding-top: 20px;
+}
+
+.modal h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal label {
+    display: block;
+}
+
+.modal input[type="text"],
+.modal input[type="email"],
+.modal input[type="password"] {
+    width: 50%;
+    padding: 10px;
+    margin: 1em;
+    border: 1px solid #ccc;
+}
+
+.modal .form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal .form-footer span {
+    margin-right: 10px;
+}
+.form-footer span a {
+    display: inline-block;
+    padding: 10px 20px; /* Ajustez selon vos préférences */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px; /* Arrondi les coins */
+    height: auto;
+    transition: background-color 0.3s;
+
+    text-align: center; /* Centre le texte horizontalement */
+}
+
+.form-footer {
+    display: flex;
+    flex-direction: column-reverse; /* Inverse l'ordre des éléments */
+    align-items: center; /* Centre les éléments horizontalement */
+}
+
+.form-footer span {
+    margin-top: 10px; /* Espace supplémentaire entre les éléments */
+    margin-bottom: 20%;
+}
+.form-footer span a:hover {
+    background-color: #ffcc00;/* Change la couleur au survol */
+}
+
+
+.modal button[type="submit"] {
+    padding: 10px 20px;
+    color: white;
+    background-color:#193784;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal button[type="submit"]:hover {
+    background-color: #ffcc00;
+}
+
+/* Styles pour le texte "Déjà un compte ?" et "Nouveau ici ?" */
+.modal .form-footer span {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Ajoutez d'autres styles selon votre besoin */
